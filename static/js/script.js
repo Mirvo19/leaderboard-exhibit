@@ -2,6 +2,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const tableBody = document.querySelector('#leaderboard-table tbody');
     const addForm = document.getElementById('add-player-form');
     
+    // Theme Switcher Logic
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Check local storage for theme
+    if (localStorage.getItem('theme') === 'light') {
+        body.classList.add('light-theme');
+        themeToggleBtn.textContent = ' Dark Mode';
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+        body.classList.toggle('light-theme');
+        if (body.classList.contains('light-theme')) {
+            localStorage.setItem('theme', 'light');
+            themeToggleBtn.textContent = ' Dark Mode';
+        } else {
+            localStorage.setItem('theme', 'dark');
+            themeToggleBtn.textContent = ' Light Mode';
+        }
+    });
+
     // State to track previous scores for flash effects
     let previousScores = {}; 
     let isEditing = false; // Prevent polling updates while editing
