@@ -56,6 +56,7 @@ h1 {
     letter-spacing: 2px;
     background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 0 0 20px rgba(176, 38, 255, 0.3);
 }
@@ -167,7 +168,7 @@ tr:hover {
 }
 
 .rank-1 { color: var(--neon-green); text-shadow: 0 0 10px rgba(57, 255, 20, 0.4); font-size: 1.2rem; }
-.rank-2 { color: #silver; text-shadow: 0 0 10px rgba(192, 192, 192, 0.4); font-size: 1.1rem; }
+.rank-2 { color: silver; text-shadow: 0 0 10px rgba(192, 192, 192, 0.4); font-size: 1.1rem; }
 .rank-3 { color: #cd7f32; text-shadow: 0 0 10px rgba(205, 127, 50, 0.4); font-size: 1.1rem; }
 
 /* Inline Edit */
