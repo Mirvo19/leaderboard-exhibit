@@ -1,20 +1,25 @@
 :root {
-    --bg-color: #0d001a;
-    --text-color: #ffffff;
-    --glass-bg: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --neon-purple: #b026ff;
-    --neon-blue: #32e0c4;
-    --neon-green: #39ff14;
-    --neon-red: #ff073a;
+    /* Black Coffee Gradient Palette */
+    --black-bean: #120C09;
+    --dark-roast: #1F1512;
+    --espresso: #2C1E1A;
+    --coffee-foam: #C8A17D;
+    --steamed-milk: #EAE0D5;
+    
+    /* Theme Mapping */
+    --bg-color: var(--black-bean);
+    --text-color: var(--steamed-milk);
+    --glass-bg: rgba(20, 12, 10, 0.7); /* Dark semi-transparent */
+    --glass-border: rgba(200, 161, 125, 0.1); /* Subtle foam border */
+    
+    --accent: var(--coffee-foam);
+    
     --font-main: 'Inter', sans-serif;
 }
 
 body {
     background-color: var(--bg-color);
-    background-image: 
-        radial-gradient(circle at 20% 20%, rgba(176, 38, 255, 0.2) 0%, transparent 40%),
-        radial-gradient(circle at 80% 80%, rgba(50, 224, 196, 0.15) 0%, transparent 40%);
+    background: radial-gradient(circle at center, #2C1E1A 0%, #120C09 80%);
     color: var(--text-color);
     font-family: var(--font-main);
     margin: 0;
@@ -30,35 +35,35 @@ body {
     width: 100%;
     max-width: 800px;
     background: var(--glass-bg);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border: 1px solid var(--glass-border);
     border-radius: 20px;
     padding: 40px;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
     animation: fadeIn 0.8s ease-out;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
+    from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
 header {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 h1 {
     font-size: 2.5rem;
     margin: 0;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+    letter-spacing: 4px;
+    background: linear-gradient(to right, var(--coffee-foam), var(--steamed-milk));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 20px rgba(176, 38, 255, 0.3);
+    font-weight: 300;
 }
 
 /* Add Player Form */
@@ -78,10 +83,10 @@ h1 {
 input {
     width: 100%;
     padding: 12px 15px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--glass-border);
-    border-radius: 8px;
-    color: #fff;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(200, 161, 125, 0.2);
+    border-radius: 6px;
+    color: var(--steamed-milk);
     font-size: 1rem;
     transition: all 0.3s ease;
     box-sizing: border-box;
@@ -89,36 +94,41 @@ input {
 
 input:focus {
     outline: none;
-    border-color: var(--neon-blue);
-    box-shadow: 0 0 10px rgba(50, 224, 196, 0.2);
-    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--coffee-foam);
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 15px rgba(200, 161, 125, 0.1);
 }
 
 button {
     cursor: pointer;
-    font-weight: 600;
+    font-weight: 500;
     transition: all 0.3s ease;
+    letter-spacing: 1px;
 }
 
 .btn-add {
     padding: 12px 30px;
-    background: linear-gradient(45deg, var(--neon-purple), var(--neon-blue));
-    border: none;
-    border-radius: 8px;
-    color: #fff;
+    background: linear-gradient(135deg, #3E2B24, #2C1E1A);
+    border: 1px solid rgba(200, 161, 125, 0.3);
+    border-radius: 6px;
+    color: var(--coffee-foam);
     text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 .btn-add:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 15px rgba(50, 224, 196, 0.4);
+    background: linear-gradient(135deg, #4A352C, #3E2B24);
+    color: var(--steamed-milk);
+    border-color: var(--coffee-foam);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transform: translateY(-1px);
 }
 
 /* Leaderboard Table */
 .table-wrapper {
     overflow-x: auto;
+    border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 12px;
+    background: rgba(0, 0, 0, 0.2);
 }
 
 table {
@@ -128,33 +138,33 @@ table {
 }
 
 th, td {
-    padding: 15px;
+    padding: 18px;
     text-align: left;
-    border-bottom: 1px solid var(--glass-border);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 th {
-    background: rgba(0, 0, 0, 0.2);
-    color: var(--neon-blue);
+    background: rgba(0, 0, 0, 0.4);
+    color: var(--coffee-foam);
     font-weight: 600;
     text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
 }
 
 tr {
-    transition: background 0.2s ease, transform 0.2s ease;
+    transition: background 0.2s ease;
 }
 
 tr:hover {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(200, 161, 125, 0.05);
 }
 
 /* Flash animation for updates */
 @keyframes flash {
-    0% { background-color: rgba(50, 224, 196, 0.0); }
-    50% { background-color: rgba(50, 224, 196, 0.3); }
-    100% { background-color: rgba(50, 224, 196, 0.0); }
+    0% { background-color: transparent; }
+    50% { background-color: rgba(200, 161, 125, 0.2); }
+    100% { background-color: transparent; }
 }
 
 .flash-update {
@@ -163,76 +173,77 @@ tr:hover {
 
 /* Ranks */
 .rank {
-    font-weight: bold;
-    color: #888;
+    font-weight: 600;
+    color: #665245;
 }
 
-.rank-1 { color: var(--neon-green); text-shadow: 0 0 10px rgba(57, 255, 20, 0.4); font-size: 1.2rem; }
-.rank-2 { color: silver; text-shadow: 0 0 10px rgba(192, 192, 192, 0.4); font-size: 1.1rem; }
-.rank-3 { color: #cd7f32; text-shadow: 0 0 10px rgba(205, 127, 50, 0.4); font-size: 1.1rem; }
+.rank-1 { color: #D4AF37; /* Gold */ font-size: 1.1rem; text-shadow: 0 0 10px rgba(212, 175, 55, 0.2); }
+.rank-2 { color: #C0C0C0; /* Silver */ font-size: 1.05rem; }
+.rank-3 { color: #CD7F32; /* Bronze */ font-size: 1.05rem; }
 
 /* Inline Edit */
 .editable-score {
     cursor: pointer;
-    border-bottom: 1px dashed rgba(255,255,255,0.3);
-    padding-bottom: 2px;
-    transition: border-color 0.3s;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s;
 }
 
 .editable-score:hover {
-    border-bottom-color: var(--neon-blue);
-    color: var(--neon-blue);
+    border-bottom: 1px solid var(--coffee-foam);
+    color: var(--coffee-foam);
 }
 
 .editable-score:focus {
     outline: none;
-    border-bottom-color: var(--neon-green);
-    color: var(--neon-green);
-    background: rgba(0,0,0,0.2);
-    cursor: text;
+    border-bottom: 1px solid var(--steamed-milk);
+    color: var(--steamed-milk);
 }
 
 /* Delete Button */
 .btn-delete {
     background: transparent;
-    color: rgba(255, 255, 255, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #55443F;
+    border: 1px solid transparent;
     padding: 6px 12px;
-    border-radius: 6px;
     font-size: 0.8rem;
+    border-radius: 4px;
+    transition: all 0.3s;
 }
 
 .btn-delete:hover {
-    color: #fff;
-    background: rgba(255, 7, 58, 0.2);
-    border-color: var(--neon-red);
-    box-shadow: 0 0 10px rgba(255, 7, 58, 0.2);
+    color: #ff6b6b;
+    border-color: rgba(255, 107, 107, 0.2);
+    background: rgba(255, 107, 107, 0.1);
 }
 
 /* Scrollbar */
 ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.1);
+    background: #0F0A08;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 3px;
+    background: #3E2B24;
+    border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.4);
+    background: #4A352C;
 }
 
 /* Mobile Responsive */
 @media (max-width: 600px) {
     .container {
-        padding: 20px;
+        padding: 24px;
         width: 100%;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        background: transparent;
     }
     
     .add-player-form {
