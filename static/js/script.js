@@ -136,9 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         onkeydown="handleEnterKey(event, this)"
                     >${player.score}</span>
                 </td>
-                <td>
-                    <button class="btn-delete" onclick="deletePlayer(${player.id})">Delete</button>
-                </td>
+               
             `;
             tableBody.appendChild(tr);
         });
