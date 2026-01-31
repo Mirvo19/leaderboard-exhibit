@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td>
                     <span 
                         class="editable-score" 
-                        contenteditable="true" 
+                        contenteditable="false" 
                         data-id="${player.id}"
                         data-original-score="${player.score}"
                         onfocus="enterEditMode(this)"
